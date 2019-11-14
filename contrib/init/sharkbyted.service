@@ -1,0 +1,22 @@
+[Unit]
+Description=sharkbyte's distributed currency daemon
+After=network.target
+
+[Service]
+User=sharkbytecore
+Group=sharkbytecore
+
+Type=forking
+PIDFile=/var/lib/sharkbyted/sharkbyted.pid
+ExecStart=/usr/bin/sharkbyted -daemon -pid=/var/lib/sharkbyted/sharkbyted.pid \
+-conf=/etc/sharkbytecore/sharkbyte.conf -datadir=/var/lib/sharkbyted -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

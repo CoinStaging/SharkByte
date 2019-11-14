@@ -1,0 +1,6 @@
+usr/local/bin/sharkbyte-qt usr/bin
+share/pixmaps/sharkbyte32.xpm usr/share/pixmaps
+share/pixmaps/sharkbyte16.xpm usr/share/pixmaps
+share/pixmaps/sharkbyte128.png usr/share/pixmaps
+debian/sharkbyte-qt.desktop usr/share/applications
+debian/sharkbyte-qt.protocol usr/share/kde4/services/

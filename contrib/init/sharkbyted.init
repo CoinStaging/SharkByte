@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  sharkbyted The sharkbyte Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: sharkbyted
+# processname: sharkbyted
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/sharkbyted, see below
+if [ -f /etc/sysconfig/sharkbyted ]; then
+        . /etc/sysconfig/sharkbyted
+fi
+
+RETVAL=0
+
+prog=sharkbyted
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/sharkbyted
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/sharkbyted}
+
+# sharkbyted defaults to /usr/bin/sharkbyted, override with BITCOIND_BIN
+sharkbyted=${BITCOIND_BIN-/usr/bin/sharkbyted}
+
+# sharkbyted opts default to -disablewallet, override with BITCOIND_OPTS
+sharkbyted_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $sharkbyted $sharkbyted_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=sharkbyte Core
+Comment=sharkbyte P2P Cryptocurrency
+Comment[de]=Verbinde mit dem sharkbyte peer-to-peer Netzwerk
+Comment[fr]=sharkbyte, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=sharkbyte, eşten eşe kriptografik sanal para birimi
+Exec=sharkbyte-qt %u
+Terminal=false
+Type=Application
+Icon=sharkbyte128
+MimeType=x-scheme-handler/sharkbyte;
+Categories=Office;Finance;
