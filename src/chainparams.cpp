@@ -329,6 +329,29 @@ public:
         // sharkbyte BIP44 coin type is '5'
         nExtCoinType = 5;
 
+        vSeeds.push_back(CDNSSeedData("seed1", "178.62.211.142"));
+        vSeeds.push_back(CDNSSeedData("seed2", "185.241.52.166"));
+        vSeeds.push_back(CDNSSeedData("seed3", "189.189.189.187"));
+        vSeeds.push_back(CDNSSeedData("seed4", "189.189.189.184"));
+        vSeeds.push_back(CDNSSeedData("seed5", "189.189.189.183"));
+        vSeeds.push_back(CDNSSeedData("seed6", "185.241.52.168"));
+        vSeeds.push_back(CDNSSeedData("seed7", "185.231.55.121"));
+        vSeeds.push_back(CDNSSeedData("seed8", "212.48.23.56"));
+        vSeeds.push_back(CDNSSeedData("seed9", "185.241.52.169"));
+        vSeeds.push_back(CDNSSeedData("seed10", "40.127.200.239"));
+        vSeeds.push_back(CDNSSeedData("seed11", "36.57.171.121"));
+        vSeeds.push_back(CDNSSeedData("seed12", "188.188.188.188"));
+        vSeeds.push_back(CDNSSeedData("seed13", "185.241.52.163"));
+        vSeeds.push_back(CDNSSeedData("seed14", "189.189.189.188"));
+        vSeeds.push_back(CDNSSeedData("seed15", "185.241.52.164"));
+        vSeeds.push_back(CDNSSeedData("seed16", "189.189.189.189"));
+        vSeeds.push_back(CDNSSeedData("seed17", "185.241.52.165"));
+        vSeeds.push_back(CDNSSeedData("seed18", "189.189.189.185"));
+ 	    vSeeds.push_back(CDNSSeedData("seed19", "185.241.52.167"));
+        vSeeds.push_back(CDNSSeedData("seed20", "189.189.189.182"));
+        vSeeds.push_back(CDNSSeedData("seed21", "185.241.52.170"));
+	    vSeeds.push_back(CDNSSeedData("seed22", "189.189.189.186"));
+
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         // long living quorum params
@@ -356,7 +379,10 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00000b7b52a0bbc1b30392fc4632fb4d7ee81e7f993961b398378969cff592ed"))
+                (0, uint256S("0x00000b7b52a0bbc1b30392fc4632fb4d7ee81e7f993961b398378969cff592ed"))
+                (1000, uint256S("0x00000000000000ded4030d72f0c661685ea8b578eced1efba0584fb9849928a4"))
+                (2000, uint256S("0x000000000000c6ae921a3fdcbab511130bfcde19fc85bf1da321fcc040ce479f"))
+                (3000, uint256S("0x000000000000a1d7f85a3654666d563bca8a6ef6d8be6411029c3c1604d50088"))
         };
 
         chainTxData = ChainTxData{
